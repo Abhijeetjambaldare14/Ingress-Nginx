@@ -29,10 +29,6 @@ az acr import --name $REGISTRY_NAME --source $DEFAULTBACKEND_REGISTRY/$DEFAULTBA
 mkdir chart-yaml
 wget https://github.com/kubernetes/ingress-nginx/releases/download/helm-chart-4.6.1/ingress-nginx-4.6.1.tgz
 
-tar -xvzf ingress-nginx-4.6.1.tgz
-# Go at the Chart level folder and run helm package . it will create .tgz file again
-
-
 
 # Authenticate with ACR with --expose-token
 export HELM_EXPERIMENTAL_OCI=1
