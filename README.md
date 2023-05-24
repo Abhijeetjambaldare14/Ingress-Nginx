@@ -24,3 +24,8 @@ How to deploy nginx-ingress controller in a private Azure Kubernetes & Private A
     b. apt-get update && apt-get install -y curl<br>
     c. curl -L http://youripgivenfortheinternalloadbalancer and curl -L -k http://yourip/hello-world-two <br>
     d. You can also open a browser in a vm with access to this vnet and you should see your ingress working <br>
+    
+    
+# Links
+https://learn.microsoft.com/en-us/azure/aks/ingress-basic?tabs=azure-cli
+https://devopscube.com/setup-ingress-kubernetes-nginx-controller/
