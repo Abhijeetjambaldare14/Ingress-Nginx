@@ -29,3 +29,4 @@ How to deploy nginx-ingress controller in a private Azure Kubernetes & Private A
 # Links
 1. https://learn.microsoft.com/en-us/azure/aks/ingress-basic?tabs=azure-cli
 2. https://devopscube.com/setup-ingress-kubernetes-nginx-controller/
+3. https://www.youtube.com/watch?v=72zYxSxifpM&list=PLHq1uqvAteVvUEdqaBeMK2awVThNujwMd&index=21&t=1147s
