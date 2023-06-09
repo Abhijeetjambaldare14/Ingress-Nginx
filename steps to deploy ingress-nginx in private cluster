@@ -54,6 +54,9 @@ helm upgrade --install $INGRESS_NAME ingress-nginx --version 4.7.0 --namespace $
 --set controller.image.tag=$CONTROLLER_TAG  \
 --set controller.image.digest="" \
 --set controller.admissionWebhooks.patch.nodeSelector."kubernetes\.io/os"=linux \
+--set controller.service.loadBalancerIP=10.239.255.254 \
+--set controller.service.annotations."service\.beta\.kubernetes\.io/azure-load-balancer-internal"=true \
+--set controller.service.annotations."service\.beta\.kubernetes\.io/azure-load-balancer-health-probe-request-path"=/healthz \
 --set controller.admissionWebhooks.patch.image.registry=$ACR_URL \
 --set controller.admissionWebhooks.patch.image.digest="" \
 --set controller.admissionWebhooks.patch.image.image=$PATCH_IMAGE \
@@ -62,8 +65,7 @@ helm upgrade --install $INGRESS_NAME ingress-nginx --version 4.7.0 --namespace $
 --set defaultBackend.image.registry=$ACR_URL \
 --set defaultBackend.image.image=$DEFAULTBACKEND_IMAGE \
 --set defaultBackend.image.tag=$DEFAULTBACKEND_TAG \
---set defaultBackend.image.digest="" \
--f internal-ingress.yaml
+--set defaultBackend.image.digest="" 
 
 kubectl apply -f aks-helloworld.yaml  --namespace $NAMESPACE
 kubectl apply -f ingress-demo.yaml  --namespace $NAMESPACE
